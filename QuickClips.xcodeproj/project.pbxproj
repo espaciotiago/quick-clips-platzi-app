@@ -13,6 +13,14 @@
 		292CD6252C307B5A00F19404 /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6242C307B5A00F19404 /* UrlImageView.swift */; };
 		292CD6272C307D5300F19404 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 292CD6262C307D5300F19404 /* Colors.xcassets */; };
 		292CD62C2C307E6A00F19404 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD62B2C307E6A00F19404 /* CustomButtonView.swift */; };
+		292CD62E2C30A60300F19404 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD62D2C30A60300F19404 /* Clip.swift */; };
+		292CD6302C30A69B00F19404 /* UserClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD62F2C30A69B00F19404 /* UserClip.swift */; };
+		292CD6372C30AC6A00F19404 /* ClipUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6362C30AC6A00F19404 /* ClipUserView.swift */; };
+		292CD6392C30AD0F00F19404 /* ClipUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6382C30AD0F00F19404 /* ClipUserViewModel.swift */; };
+		292CD63B2C30AFB800F19404 /* ClipCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD63A2C30AFB800F19404 /* ClipCardViewModel.swift */; };
+		292CD63D2C30B11700F19404 /* ClipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD63C2C30B11700F19404 /* ClipDetailViewModel.swift */; };
+		292CD6402C30B50D00F19404 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD63F2C30B50D00F19404 /* SafariView.swift */; };
+		292CD6422C30B55F00F19404 /* ClipsFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6412C30B55F00F19404 /* ClipsFeedViewModel.swift */; };
 		29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */; };
 		29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8C2C306271007A6051 /* ContentView.swift */; };
 		29CEFF8F2C306272007A6051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CEFF8E2C306272007A6051 /* Assets.xcassets */; };
@@ -46,6 +54,14 @@
 		292CD6242C307B5A00F19404 /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
 		292CD6262C307D5300F19404 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		292CD62B2C307E6A00F19404 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		292CD62D2C30A60300F19404 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
+		292CD62F2C30A69B00F19404 /* UserClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClip.swift; sourceTree = "<group>"; };
+		292CD6362C30AC6A00F19404 /* ClipUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipUserView.swift; sourceTree = "<group>"; };
+		292CD6382C30AD0F00F19404 /* ClipUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipUserViewModel.swift; sourceTree = "<group>"; };
+		292CD63A2C30AFB800F19404 /* ClipCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipCardViewModel.swift; sourceTree = "<group>"; };
+		292CD63C2C30B11700F19404 /* ClipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipDetailViewModel.swift; sourceTree = "<group>"; };
+		292CD63F2C30B50D00F19404 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		292CD6412C30B55F00F19404 /* ClipsFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsFeedViewModel.swift; sourceTree = "<group>"; };
 		29CEFF872C306271007A6051 /* QuickClips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickClips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsApp.swift; sourceTree = "<group>"; };
 		29CEFF8C2C306271007A6051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,59 +100,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		292CD6142C3074A300F19404 /* Entities */ = {
+		292CD6142C3074A300F19404 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				292CD6312C30AB9500F19404 /* Entities */,
+				292CD6322C30ABA600F19404 /* Repositories */,
+				292CD6332C30ABAC00F19404 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		292CD6182C3074D100F19404 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				292CD6352C30ABF700F19404 /* ViewModels */,
+				292CD61B2C30750700F19404 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		292CD61B2C30750700F19404 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				292CD63E2C30B50100F19404 /* Representables */,
+				292CD6202C307ABB00F19404 /* ClipCardView.swift */,
+				292CD61E2C307AA700F19404 /* ClipDetailView.swift */,
+				292CD61C2C307A9C00F19404 /* ClipsFeedView.swift */,
+				292CD6362C30AC6A00F19404 /* ClipUserView.swift */,
+				29CEFF8C2C306271007A6051 /* ContentView.swift */,
+				292CD62B2C307E6A00F19404 /* CustomButtonView.swift */,
+				292CD6242C307B5A00F19404 /* UrlImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		292CD6312C30AB9500F19404 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				292CD62D2C30A60300F19404 /* Clip.swift */,
+				292CD62F2C30A69B00F19404 /* UserClip.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		292CD6152C3074B800F19404 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
-		292CD6162C3074C100F19404 /* Repositories */ = {
+		292CD6322C30ABA600F19404 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		292CD6172C3074C800F19404 /* Adapters */ = {
+		292CD6332C30ABAC00F19404 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Adapters;
+			path = UseCases;
 			sourceTree = "<group>";
 		};
-		292CD6182C3074D100F19404 /* Presentation */ = {
+		292CD6342C30ABBE00F19404 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				292CD61B2C30750700F19404 /* Views */,
 			);
-			path = Presentation;
+			path = Data;
 			sourceTree = "<group>";
 		};
-		292CD6192C3074D900F19404 /* Frameworks */ = {
+		292CD6352C30ABF700F19404 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				292CD63A2C30AFB800F19404 /* ClipCardViewModel.swift */,
+				292CD6382C30AD0F00F19404 /* ClipUserViewModel.swift */,
+				292CD63C2C30B11700F19404 /* ClipDetailViewModel.swift */,
+				292CD6412C30B55F00F19404 /* ClipsFeedViewModel.swift */,
 			);
-			path = Frameworks;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		292CD61B2C30750700F19404 /* Views */ = {
+		292CD63E2C30B50100F19404 /* Representables */ = {
 			isa = PBXGroup;
 			children = (
-				292CD6202C307ABB00F19404 /* ClipCardView.swift */,
-				292CD61E2C307AA700F19404 /* ClipDetailView.swift */,
-				292CD61C2C307A9C00F19404 /* ClipsFeedView.swift */,
-				292CD62B2C307E6A00F19404 /* CustomButtonView.swift */,
-				292CD6242C307B5A00F19404 /* UrlImageView.swift */,
+				292CD63F2C30B50D00F19404 /* SafariView.swift */,
 			);
-			path = Views;
+			path = Representables;
 			sourceTree = "<group>";
 		};
 		29CEFF7E2C306271007A6051 = {
@@ -163,17 +207,13 @@
 			isa = PBXGroup;
 			children = (
 				29CEFF902C306272007A6051 /* QuickClips.entitlements */,
-				29CEFF8C2C306271007A6051 /* ContentView.swift */,
 				29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */,
 				29CEFF8E2C306272007A6051 /* Assets.xcassets */,
 				292CD6262C307D5300F19404 /* Colors.xcassets */,
-				292CD6172C3074C800F19404 /* Adapters */,
-				292CD6142C3074A300F19404 /* Entities */,
-				292CD6192C3074D900F19404 /* Frameworks */,
+				292CD6342C30ABBE00F19404 /* Data */,
+				292CD6142C3074A300F19404 /* Domain */,
 				292CD6182C3074D100F19404 /* Presentation */,
 				29CEFF912C306272007A6051 /* Preview Content */,
-				292CD6162C3074C100F19404 /* Repositories */,
-				292CD6152C3074B800F19404 /* UseCases */,
 			);
 			path = QuickClips;
 			sourceTree = "<group>";
@@ -338,11 +378,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				292CD62C2C307E6A00F19404 /* CustomButtonView.swift in Sources */,
+				292CD6372C30AC6A00F19404 /* ClipUserView.swift in Sources */,
 				29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */,
 				292CD61F2C307AA700F19404 /* ClipDetailView.swift in Sources */,
+				292CD63B2C30AFB800F19404 /* ClipCardViewModel.swift in Sources */,
+				292CD6392C30AD0F00F19404 /* ClipUserViewModel.swift in Sources */,
+				292CD6402C30B50D00F19404 /* SafariView.swift in Sources */,
 				292CD6252C307B5A00F19404 /* UrlImageView.swift in Sources */,
+				292CD6422C30B55F00F19404 /* ClipsFeedViewModel.swift in Sources */,
 				29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */,
+				292CD63D2C30B11700F19404 /* ClipDetailViewModel.swift in Sources */,
+				292CD62E2C30A60300F19404 /* Clip.swift in Sources */,
 				292CD6212C307ABB00F19404 /* ClipCardView.swift in Sources */,
+				292CD6302C30A69B00F19404 /* UserClip.swift in Sources */,
 				292CD61D2C307A9C00F19404 /* ClipsFeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

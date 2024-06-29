@@ -10,11 +10,8 @@ import AVKit
 
 struct ClipDetailView: View {
     
-    let userUrl = "https://ui-avatars.com/api/?name=John+Doe"
-    let url = URL(string: "https://videos.pexels.com/video-files/1526909/1526909-hd_1280_720_24fps.mp4")
-    
     @Environment(\.presentationMode) var presentationMode
-    @State var player: AVPlayer?
+    @StateObject var viewModel: ClipDetailViewModel
     
     
     var body: some View {
@@ -22,7 +19,7 @@ struct ClipDetailView: View {
             Color(.primary).edgesIgnoringSafeArea(.all)
             VStack(spacing: 16) {
                 VStack {
-                    if let player = self.player {
+                    if let player = self.viewModel.player {
                         VideoPlayer(player: player)
                             .onAppear {
                                 player.play()
@@ -37,17 +34,10 @@ struct ClipDetailView: View {
                     }
                 }
                 Spacer()
-                HStack {
-                    UrlImageView(urlString: self.userUrl)
-                        .frame(width: 32, height: 32)
-                        .clipShape(Circle())
-                    Text("Jhon Doe")
-                        .font(.subheadline)
-                        .foregroundStyle(Color(.font))
-                    Spacer()
-                    CustomButtonView(label: "Ver perfil") {
-                        // TODO: Handle
-                    }
+                ClipUserView(viewModel: ClipUserViewModel(userClip: UserClip(id: 1,
+                                                                             name: "Jhon Doe",
+                                                                             profileUrl: "https://www.pexels.com/@digitech"))) { url in
+                    self.viewModel.showProfileUrl(url)
                 }.padding(.horizontal)
             }
         }
@@ -63,15 +53,22 @@ struct ClipDetailView: View {
             }
         })
         .onAppear {
-            if let url = self.url {
-                DispatchQueue.main.async {
-                    self.player = AVPlayer(url: url)
-                }
+            self.viewModel.loadVideo()
+        }
+        .sheet(item: self.$viewModel.sheet) { item in
+            switch item {
+            case .safariView(let url):
+                SafariView(url: url)
             }
         }
     }
 }
 
 #Preview {
-    ClipDetailView()
+    ClipDetailView(viewModel: ClipDetailViewModel(clip: Clip(id: 0,
+                                                             imageUrl: "https://images.pexels.com/videos/1526909/free-video-1526909.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+                                                             videoUrl: "https://videos.pexels.com/video-files/1526909/1526909-hd_1280_720_24fps.mp4",
+                                                             user: UserClip(id: 1,
+                                                                            name: "Jhon Doe",
+                                                                            profileUrl: "https://www.pexels.com/@digitech"))))
 }

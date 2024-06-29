@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct ClipCardView: View {
-    let userUrl = "https://ui-avatars.com/api/?name=John+Doe"
-    let imageUrl = "https://images.pexels.com/videos/1526909/free-video-1526909.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200"
-    let clipSelected: () -> Void
-    let profileSelected: () -> Void
+    
+    let viewModel: ClipCardViewModel
+    let clipSelected: (Clip) -> Void
+    let profileSelected: (URL?) -> Void
     
     var body: some View {
         VStack(spacing: 16) {
             Button(action: {
-                self.clipSelected()
+                self.clipSelected(self.viewModel.clip)
             }, label: {
                 ZStack {
-                    UrlImageView(urlString: self.imageUrl)
+                    UrlImageView(urlString: self.viewModel.imageUrl)
                         .frame(maxWidth: .infinity)
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                     Image(.playButton)
@@ -29,24 +29,22 @@ struct ClipCardView: View {
                         .frame(width: 40, height: 40)
                 }
             })
-            HStack {
-                UrlImageView(urlString: self.userUrl)
-                    .frame(width: 32, height: 32)
-                    .clipShape(Circle())
-                Text("Jhon Doe")
-                    .font(.subheadline)
-                    .foregroundStyle(Color(.font))
-                Spacer()
-                CustomButtonView(label: "Ver perfil") {
-                    self.profileSelected()
-                }
+            ClipUserView(viewModel: ClipUserViewModel(userClip: self.viewModel.userClip)) { url in
+                self.profileSelected(url)
             }
         }
     }
 }
 
 #Preview {
-    ClipCardView(clipSelected: {}, profileSelected: {})
-        .padding()
-        .background(Color(.primary))
+    ClipCardView(viewModel: ClipCardViewModel(clip: Clip(id: 0,
+                                                         imageUrl: "https://images.pexels.com/videos/1526909/free-video-1526909.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+                                                         videoUrl: "https://videos.pexels.com/video-files/1526909/1526909-hd_1280_720_24fps.mp4",
+                                                         user: UserClip(id: 1,
+                                                                        name: "Jhon Doe",
+                                                                        profileUrl: "https://www.pexels.com/@digitech"))),
+                 clipSelected: { _ in },
+                 profileSelected: { _ in })
+    .padding()
+    .background(Color(.primary))
 }
