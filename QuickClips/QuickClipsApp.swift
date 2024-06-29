@@ -9,6 +9,17 @@ import SwiftUI
 
 @main
 struct QuickClipsApp: App {
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "primary")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "font") ?? UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor(named: "font") ?? UIColor.white]
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

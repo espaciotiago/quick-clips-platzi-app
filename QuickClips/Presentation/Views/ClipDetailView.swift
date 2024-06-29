@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ClipDetailView.swift
 //  QuickClips
 //
 //  Created by Santiago Moreno on 29/06/24.
@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ClipDetailView: View {
+    
     var body: some View {
-        NavigationView {
-            ClipsFeedView()
-        }
+        Text("Detail")
     }
 }
 
 #Preview {
-    ContentView()
+    ClipDetailView()
 }
