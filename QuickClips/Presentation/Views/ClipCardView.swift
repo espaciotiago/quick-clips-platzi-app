@@ -16,7 +16,7 @@ struct ClipCardView: View {
     var body: some View {
         VStack(spacing: 16) {
             Button(action: {
-                // TODO: Handle
+                self.clipSelected()
             }, label: {
                 ZStack {
                     UrlImageView(urlString: self.imageUrl)
@@ -38,7 +38,7 @@ struct ClipCardView: View {
                     .foregroundStyle(Color(.font))
                 Spacer()
                 CustomButtonView(label: "Ver perfil") {
-                    // TODO: Handle
+                    self.profileSelected()
                 }
             }
         }

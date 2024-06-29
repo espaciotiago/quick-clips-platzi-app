@@ -19,7 +19,7 @@ struct UrlImageView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             } else {
-                ProgressView() // Indicador de carga
+                ProgressView()
                     .onAppear {
                         loadImage()
                     }

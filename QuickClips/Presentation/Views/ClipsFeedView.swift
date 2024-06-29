@@ -8,18 +8,33 @@
 import SwiftUI
 
 struct ClipsFeedView: View {
+    
+    @State private var isDetailViewActive = false
+    
     var body: some View {
         ZStack {
             Color(.primary).edgesIgnoringSafeArea(.all)
             ScrollView {
                 LazyVStack(spacing: 32) {
-                    ClipCardView(clipSelected: {}, profileSelected: {})
-                    ClipCardView(clipSelected: {}, profileSelected: {})
-                    ClipCardView(clipSelected: {}, profileSelected: {})
-                    ClipCardView(clipSelected: {}, profileSelected: {})
+                    ClipCardView(clipSelected: {
+                        self.isDetailViewActive = true
+                    }, profileSelected: {})
+                    ClipCardView(clipSelected: {
+                        self.isDetailViewActive = true
+                    }, profileSelected: {})
+                    ClipCardView(clipSelected: {
+                        self.isDetailViewActive = true
+                    }, profileSelected: {})
+                    ClipCardView(clipSelected: {
+                        self.isDetailViewActive = true
+                    }, profileSelected: {})
                 }.padding()
             }
-        }.navigationTitle("QuickClips")
+        }
+        .navigationTitle("QuickClips")
+        .navigationDestination(isPresented: self.$isDetailViewActive) {
+            ClipDetailView()
+        }
     }
 }
 
