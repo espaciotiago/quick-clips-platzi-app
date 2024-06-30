@@ -27,6 +27,8 @@
 		292CD64B2C31CC4300F19404 /* CheckConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD64A2C31CC4300F19404 /* CheckConnectionProtocol.swift */; };
 		292CD64D2C31CD6800F19404 /* GetClipsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD64C2C31CD6800F19404 /* GetClipsRemoteDataSource.swift */; };
 		292CD64F2C31CD7D00F19404 /* GetClipsLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD64E2C31CD7D00F19404 /* GetClipsLocalDataSource.swift */; };
+		292CD6512C32136500F19404 /* MockNetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6502C32136500F19404 /* MockNetworkMonitor.swift */; };
+		292CD6532C32144E00F19404 /* GetClipsMockDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6522C32144E00F19404 /* GetClipsMockDataSource.swift */; };
 		29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */; };
 		29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8C2C306271007A6051 /* ContentView.swift */; };
 		29CEFF8F2C306272007A6051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CEFF8E2C306272007A6051 /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 		292CD64A2C31CC4300F19404 /* CheckConnectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConnectionProtocol.swift; sourceTree = "<group>"; };
 		292CD64C2C31CD6800F19404 /* GetClipsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsRemoteDataSource.swift; sourceTree = "<group>"; };
 		292CD64E2C31CD7D00F19404 /* GetClipsLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsLocalDataSource.swift; sourceTree = "<group>"; };
+		292CD6502C32136500F19404 /* MockNetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkMonitor.swift; sourceTree = "<group>"; };
+		292CD6522C32144E00F19404 /* GetClipsMockDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsMockDataSource.swift; sourceTree = "<group>"; };
 		29CEFF872C306271007A6051 /* QuickClips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickClips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsApp.swift; sourceTree = "<group>"; };
 		29CEFF8C2C306271007A6051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 			children = (
 				292CD64C2C31CD6800F19404 /* GetClipsRemoteDataSource.swift */,
 				292CD64E2C31CD7D00F19404 /* GetClipsLocalDataSource.swift */,
+				292CD6522C32144E00F19404 /* GetClipsMockDataSource.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				292CD64A2C31CC4300F19404 /* CheckConnectionProtocol.swift */,
+				292CD6502C32136500F19404 /* MockNetworkMonitor.swift */,
 				292CD6482C31C87700F19404 /* NetworkMonitor.swift */,
 			);
 			path = Utils;
@@ -406,6 +412,7 @@
 				292CD62C2C307E6A00F19404 /* CustomButtonView.swift in Sources */,
 				292CD6372C30AC6A00F19404 /* ClipUserView.swift in Sources */,
 				29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */,
+				292CD6532C32144E00F19404 /* GetClipsMockDataSource.swift in Sources */,
 				292CD64D2C31CD6800F19404 /* GetClipsRemoteDataSource.swift in Sources */,
 				292CD64F2C31CD7D00F19404 /* GetClipsLocalDataSource.swift in Sources */,
 				292CD61F2C307AA700F19404 /* ClipDetailView.swift in Sources */,
@@ -414,6 +421,7 @@
 				292CD6402C30B50D00F19404 /* SafariView.swift in Sources */,
 				292CD6492C31C87700F19404 /* NetworkMonitor.swift in Sources */,
 				292CD6252C307B5A00F19404 /* UrlImageView.swift in Sources */,
+				292CD6512C32136500F19404 /* MockNetworkMonitor.swift in Sources */,
 				292CD6422C30B55F00F19404 /* ClipsFeedViewModel.swift in Sources */,
 				29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */,
 				292CD63D2C30B11700F19404 /* ClipDetailViewModel.swift in Sources */,

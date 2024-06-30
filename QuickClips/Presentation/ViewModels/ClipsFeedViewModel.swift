@@ -19,7 +19,7 @@ class ClipsFeedViewModel: ObservableObject {
     @Published var sheet: ClipsFeedSheet?
     @Published var selectedClip: Clip?
     let limit = 10
-    var page = 0
+    var page = 1
     var feed = [ClipCardViewModel]()
     var error: Error?
     
@@ -38,7 +38,8 @@ class ClipsFeedViewModel: ObservableObject {
             let result = try await self.getClipsUseCase.execute(page: self.page, limit: self.limit)
             switch result {
             case .success(let clips):
-                self.feed = clips.map {ClipCardViewModel(clip: $0)}
+                self.feed.append(contentsOf: clips.map {ClipCardViewModel(clip: $0)})
+                self.page += 1
             case .failure(let error):
                 self.error = error
             }

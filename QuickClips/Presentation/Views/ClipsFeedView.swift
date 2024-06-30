@@ -16,6 +16,8 @@ struct ClipsFeedView: View {
             Color(.primary).edgesIgnoringSafeArea(.all)
             if self.viewModel.loading {
                 LoadingView
+            } else if let error = self.viewModel.error {
+                ErrorView(error)
             } else if self.viewModel.shouldShowEmptyView {
                 EmptyView
             } else {
@@ -68,6 +70,24 @@ struct ClipsFeedView: View {
             Text("No hay datos para mostrar")
                 .font(.subheadline)
                 .foregroundStyle(Color(.font))
+                .multilineTextAlignment(.center)
+            CustomButtonView(label: "Reintentar") {
+                Task {
+                    self.viewModel.loading = true
+                    await self.viewModel.getFeed()
+                }
+            }
+            Spacer()
+        }.padding()
+    }
+    
+    private func ErrorView(_ error: Error) -> some View {
+        VStack(spacing: 16) {
+            Spacer()
+            Text(error.localizedDescription)
+                .font(.subheadline)
+                .foregroundStyle(Color(.font))
+                .multilineTextAlignment(.center)
             CustomButtonView(label: "Reintentar") {
                 Task {
                     self.viewModel.loading = true
@@ -79,8 +99,34 @@ struct ClipsFeedView: View {
     }
 }
 
-#Preview {
-    ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsRemoteDataSource(),
-                                                                                 localDataSource: GetClipsLocalDataSource(),
-                                                                                 networkMonitor: NetworkMonitor())))
+#Preview("With connection") {
+    NavigationStack {
+        ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(),
+                                                                                     localDataSource: GetClipsMockDataSource(isRemote: false),
+                                                                                     networkMonitor: MockNetworkMonitor())))
+    }
+}
+
+#Preview("Without connection") {
+    NavigationStack {
+        ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(),
+                                                                                     localDataSource: GetClipsMockDataSource(isRemote: false),
+                                                                                     networkMonitor: MockNetworkMonitor(hasConnection: false))))
+    }
+}
+
+#Preview("Error") {
+    NavigationStack {
+        ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(error: NSError(domain: "Something went wrong", code: 400)),
+                                                                                     localDataSource: GetClipsMockDataSource(isRemote: false),
+                                                                                     networkMonitor: MockNetworkMonitor())))
+    }
+}
+
+#Preview("Empty") {
+    NavigationStack {
+        ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(feed: []),
+                                                                                     localDataSource: GetClipsMockDataSource(isRemote: false),
+                                                                                     networkMonitor: MockNetworkMonitor())))
+    }
 }
