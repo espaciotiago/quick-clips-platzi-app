@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct QuickClipsApp: App {
+    
     init() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()

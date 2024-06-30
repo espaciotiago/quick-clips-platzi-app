@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationStack {
-            ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsRemoteDataSource(),
-                                                                                         localDataSource: GetClipsLocalDataSource(),
-                                                                                         networkMonitor: NetworkMonitor())))
+            ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: AppCompositionRoot.shared.getClipsUseCase))
         }
     }
 }

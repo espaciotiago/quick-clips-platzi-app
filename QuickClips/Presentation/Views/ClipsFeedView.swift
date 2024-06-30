@@ -89,8 +89,8 @@ struct ClipsFeedView: View {
                 .foregroundStyle(Color(.font))
                 .multilineTextAlignment(.center)
             CustomButtonView(label: "Reintentar") {
+                self.viewModel.loading = true
                 Task {
-                    self.viewModel.loading = true
                     await self.viewModel.getFeed()
                 }
             }
@@ -117,7 +117,8 @@ struct ClipsFeedView: View {
 
 #Preview("Error") {
     NavigationStack {
-        ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(error: NSError(domain: "Something went wrong", code: 400)),
+        ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(error: NSError(domain: "Something went wrong",
+                                                                                                                                             code: 400)),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
                                                                                      networkMonitor: MockNetworkMonitor())))
     }

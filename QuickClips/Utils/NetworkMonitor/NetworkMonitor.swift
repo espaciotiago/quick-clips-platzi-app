@@ -13,8 +13,10 @@ struct NetworkMonitor: CheckConnectionProtocol {
     let networkMonitor = NWPathMonitor()
     
     func checkConnection() async -> Bool {
-        let queue = DispatchQueue.global(qos: .background)
         return await withCheckedContinuation { continuation in
+            let networkMonitor = NWPathMonitor()
+            let queue = DispatchQueue.global(qos: .background)
+            
             networkMonitor.pathUpdateHandler = { path in
                 if path.status == .satisfied {
                     continuation.resume(returning: true)
@@ -23,6 +25,7 @@ struct NetworkMonitor: CheckConnectionProtocol {
                 }
                 networkMonitor.cancel()
             }
+            
             networkMonitor.start(queue: queue)
         }
     }

@@ -23,9 +23,9 @@ class ClipsFeedViewModel: ObservableObject {
     var feed = [ClipCardViewModel]()
     var error: Error?
     
-    private let getClipsUseCase: GetClipsUseCase
+    private let getClipsUseCase: GetClipsUseCaseProtocol
     
-    init(getClipsUseCase: GetClipsUseCase) {
+    init(getClipsUseCase: GetClipsUseCaseProtocol) {
         self.getClipsUseCase = getClipsUseCase
     }
     
