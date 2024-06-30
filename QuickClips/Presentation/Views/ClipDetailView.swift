@@ -13,7 +13,6 @@ struct ClipDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: ClipDetailViewModel
     
-    
     var body: some View {
         ZStack {
             Color(.primary).edgesIgnoringSafeArea(.all)
@@ -54,6 +53,7 @@ struct ClipDetailView: View {
         })
         .onAppear {
             self.viewModel.loadVideo()
+            
         }
         .sheet(item: self.$viewModel.sheet) { item in
             switch item {

@@ -21,6 +21,12 @@
 		292CD63D2C30B11700F19404 /* ClipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD63C2C30B11700F19404 /* ClipDetailViewModel.swift */; };
 		292CD6402C30B50D00F19404 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD63F2C30B50D00F19404 /* SafariView.swift */; };
 		292CD6422C30B55F00F19404 /* ClipsFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6412C30B55F00F19404 /* ClipsFeedViewModel.swift */; };
+		292CD6442C31C55200F19404 /* GetClipsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6432C31C55200F19404 /* GetClipsRepository.swift */; };
+		292CD6462C31C71000F19404 /* GetClipsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6452C31C71000F19404 /* GetClipsUseCase.swift */; };
+		292CD6492C31C87700F19404 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6482C31C87700F19404 /* NetworkMonitor.swift */; };
+		292CD64B2C31CC4300F19404 /* CheckConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD64A2C31CC4300F19404 /* CheckConnectionProtocol.swift */; };
+		292CD64D2C31CD6800F19404 /* GetClipsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD64C2C31CD6800F19404 /* GetClipsRemoteDataSource.swift */; };
+		292CD64F2C31CD7D00F19404 /* GetClipsLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD64E2C31CD7D00F19404 /* GetClipsLocalDataSource.swift */; };
 		29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */; };
 		29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8C2C306271007A6051 /* ContentView.swift */; };
 		29CEFF8F2C306272007A6051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CEFF8E2C306272007A6051 /* Assets.xcassets */; };
@@ -62,6 +68,12 @@
 		292CD63C2C30B11700F19404 /* ClipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipDetailViewModel.swift; sourceTree = "<group>"; };
 		292CD63F2C30B50D00F19404 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		292CD6412C30B55F00F19404 /* ClipsFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsFeedViewModel.swift; sourceTree = "<group>"; };
+		292CD6432C31C55200F19404 /* GetClipsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsRepository.swift; sourceTree = "<group>"; };
+		292CD6452C31C71000F19404 /* GetClipsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsUseCase.swift; sourceTree = "<group>"; };
+		292CD6482C31C87700F19404 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		292CD64A2C31CC4300F19404 /* CheckConnectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConnectionProtocol.swift; sourceTree = "<group>"; };
+		292CD64C2C31CD6800F19404 /* GetClipsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsRemoteDataSource.swift; sourceTree = "<group>"; };
+		292CD64E2C31CD7D00F19404 /* GetClipsLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsLocalDataSource.swift; sourceTree = "<group>"; };
 		29CEFF872C306271007A6051 /* QuickClips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickClips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsApp.swift; sourceTree = "<group>"; };
 		29CEFF8C2C306271007A6051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +158,7 @@
 		292CD6322C30ABA600F19404 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				292CD6432C31C55200F19404 /* GetClipsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -153,6 +166,7 @@
 		292CD6332C30ABAC00F19404 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				292CD6452C31C71000F19404 /* GetClipsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -160,6 +174,8 @@
 		292CD6342C30ABBE00F19404 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				292CD64C2C31CD6800F19404 /* GetClipsRemoteDataSource.swift */,
+				292CD64E2C31CD7D00F19404 /* GetClipsLocalDataSource.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -181,6 +197,15 @@
 				292CD63F2C30B50D00F19404 /* SafariView.swift */,
 			);
 			path = Representables;
+			sourceTree = "<group>";
+		};
+		292CD6472C31C86600F19404 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				292CD64A2C31CC4300F19404 /* CheckConnectionProtocol.swift */,
+				292CD6482C31C87700F19404 /* NetworkMonitor.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		29CEFF7E2C306271007A6051 = {
@@ -214,6 +239,7 @@
 				292CD6142C3074A300F19404 /* Domain */,
 				292CD6182C3074D100F19404 /* Presentation */,
 				29CEFF912C306272007A6051 /* Preview Content */,
+				292CD6472C31C86600F19404 /* Utils */,
 			);
 			path = QuickClips;
 			sourceTree = "<group>";
@@ -380,17 +406,23 @@
 				292CD62C2C307E6A00F19404 /* CustomButtonView.swift in Sources */,
 				292CD6372C30AC6A00F19404 /* ClipUserView.swift in Sources */,
 				29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */,
+				292CD64D2C31CD6800F19404 /* GetClipsRemoteDataSource.swift in Sources */,
+				292CD64F2C31CD7D00F19404 /* GetClipsLocalDataSource.swift in Sources */,
 				292CD61F2C307AA700F19404 /* ClipDetailView.swift in Sources */,
 				292CD63B2C30AFB800F19404 /* ClipCardViewModel.swift in Sources */,
 				292CD6392C30AD0F00F19404 /* ClipUserViewModel.swift in Sources */,
 				292CD6402C30B50D00F19404 /* SafariView.swift in Sources */,
+				292CD6492C31C87700F19404 /* NetworkMonitor.swift in Sources */,
 				292CD6252C307B5A00F19404 /* UrlImageView.swift in Sources */,
 				292CD6422C30B55F00F19404 /* ClipsFeedViewModel.swift in Sources */,
 				29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */,
 				292CD63D2C30B11700F19404 /* ClipDetailViewModel.swift in Sources */,
 				292CD62E2C30A60300F19404 /* Clip.swift in Sources */,
+				292CD64B2C31CC4300F19404 /* CheckConnectionProtocol.swift in Sources */,
 				292CD6212C307ABB00F19404 /* ClipCardView.swift in Sources */,
 				292CD6302C30A69B00F19404 /* UserClip.swift in Sources */,
+				292CD6442C31C55200F19404 /* GetClipsRepository.swift in Sources */,
+				292CD6462C31C71000F19404 /* GetClipsUseCase.swift in Sources */,
 				292CD61D2C307A9C00F19404 /* ClipsFeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

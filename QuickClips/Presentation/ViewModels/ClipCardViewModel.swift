@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct ClipCardViewModel {
+struct ClipCardViewModel: Identifiable {
+    
+    let id = UUID()
     
     let clip: Clip
     
