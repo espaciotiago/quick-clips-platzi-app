@@ -38,21 +38,15 @@ class ClipsFeedViewModel: ObservableObject {
             let result = try await self.getClipsUseCase.execute(page: self.page, limit: self.limit)
             switch result {
             case .success(let clips):
-                DispatchQueue.main.async {
-                    self.feed = clips.map {ClipCardViewModel(clip: $0)}
-                    self.loading = false
-                }
+                self.feed = clips.map {ClipCardViewModel(clip: $0)}
             case .failure(let error):
-                DispatchQueue.main.async {
-                    self.error = error
-                    self.loading = false
-                }
+                self.error = error
             }
         } catch {
-            DispatchQueue.main.async {
-                self.error = error
-                self.loading = false
-            }
+            self.error = error
+        }
+        DispatchQueue.main.async {
+            self.loading = false
         }
     }
     
