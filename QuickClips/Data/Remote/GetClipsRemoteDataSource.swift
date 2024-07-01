@@ -12,7 +12,7 @@ struct GetClipsRemoteDataSource: GetClipsRepository {
     let service: NetworkingRequestProtocol
     
     func getClips(page: Int, limit: Int) async throws -> Result<GetClipsSuccessResult, Error> {
-        guard let url = URL(string: ApiUrl.getPopularVideos) else {
+        guard let url = URL(string: ApiUrls.getPopularVideos) else {
             return .failure(NSError(domain: "Invalid url", code: 0, userInfo: nil))
         }
         let headers = [

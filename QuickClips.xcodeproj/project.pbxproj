@@ -33,7 +33,7 @@
 		292CD65A2C321C1700F19404 /* NetworkingRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6592C321C1700F19404 /* NetworkingRequestProtocol.swift */; };
 		292CD65E2C321CAC00F19404 /* NetworkingRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD65D2C321CAC00F19404 /* NetworkingRequestService.swift */; };
 		292CD6602C321CFF00F19404 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD65F2C321CFF00F19404 /* Configuration.swift */; };
-		292CD6622C321E2C00F19404 /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6612C321E2C00F19404 /* ApiUrl.swift */; };
+		292CD6622C321E2C00F19404 /* ApiUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6612C321E2C00F19404 /* ApiUrls.swift */; };
 		292CD6642C32225200F19404 /* GetClipsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6632C32225200F19404 /* GetClipsDTO.swift */; };
 		292CD6662C323B3B00F19404 /* JsonParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6652C323B3B00F19404 /* JsonParserProtocol.swift */; };
 		292CD6682C3246C400F19404 /* CacheLatestClipsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6672C3246C400F19404 /* CacheLatestClipsRepository.swift */; };
@@ -51,6 +51,8 @@
 		29CEFF9D2C306272007A6051 /* QuickClipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF9C2C306272007A6051 /* QuickClipsTests.swift */; };
 		29CEFFA72C306272007A6051 /* QuickClipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFFA62C306272007A6051 /* QuickClipsUITests.swift */; };
 		29CEFFA92C306272007A6051 /* QuickClipsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFFA82C306272007A6051 /* QuickClipsUITestsLaunchTests.swift */; };
+		463089092C331DDB006F3B48 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 463089082C331DDA006F3B48 /* Localizable.xcstrings */; };
+		4630890B2C331FB6006F3B48 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630890A2C331FB6006F3B48 /* Translations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +113,7 @@
 		292CD6592C321C1700F19404 /* NetworkingRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequestProtocol.swift; sourceTree = "<group>"; };
 		292CD65D2C321CAC00F19404 /* NetworkingRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequestService.swift; sourceTree = "<group>"; };
 		292CD65F2C321CFF00F19404 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		292CD6612C321E2C00F19404 /* ApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
+		292CD6612C321E2C00F19404 /* ApiUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrls.swift; sourceTree = "<group>"; };
 		292CD6632C32225200F19404 /* GetClipsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsDTO.swift; sourceTree = "<group>"; };
 		292CD6652C323B3B00F19404 /* JsonParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParserProtocol.swift; sourceTree = "<group>"; };
 		292CD6672C3246C400F19404 /* CacheLatestClipsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLatestClipsRepository.swift; sourceTree = "<group>"; };
@@ -131,6 +133,8 @@
 		29CEFFA22C306272007A6051 /* QuickClipsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickClipsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CEFFA62C306272007A6051 /* QuickClipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsUITests.swift; sourceTree = "<group>"; };
 		29CEFFA82C306272007A6051 /* QuickClipsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		463089082C331DDA006F3B48 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		4630890A2C331FB6006F3B48 /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,8 +258,9 @@
 			children = (
 				292CD65B2C321C7500F19404 /* NetworkingRequest */,
 				292CD65C2C321C8400F19404 /* NetworkMonitor */,
-				292CD6612C321E2C00F19404 /* ApiUrl.swift */,
+				292CD6612C321E2C00F19404 /* ApiUrls.swift */,
 				292CD65F2C321CFF00F19404 /* Configuration.swift */,
+				4630890A2C331FB6006F3B48 /* Translations.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */,
 				29CEFF8E2C306272007A6051 /* Assets.xcassets */,
 				292CD6262C307D5300F19404 /* Colors.xcassets */,
+				463089082C331DDA006F3B48 /* Localizable.xcstrings */,
 			);
 			path = QuickClips;
 			sourceTree = "<group>";
@@ -469,6 +475,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 29CEFF7E2C306271007A6051;
 			packageReferences = (
@@ -492,6 +499,7 @@
 			files = (
 				292CD6272C307D5300F19404 /* Colors.xcassets in Resources */,
 				29CEFF932C306272007A6051 /* Preview Assets.xcassets in Resources */,
+				463089092C331DDB006F3B48 /* Localizable.xcstrings in Resources */,
 				29CEFF8F2C306272007A6051 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,7 +536,7 @@
 				292CD65A2C321C1700F19404 /* NetworkingRequestProtocol.swift in Sources */,
 				292CD64F2C31CD7D00F19404 /* GetClipsLocalDataSource.swift in Sources */,
 				292CD61F2C307AA700F19404 /* ClipDetailView.swift in Sources */,
-				292CD6622C321E2C00F19404 /* ApiUrl.swift in Sources */,
+				292CD6622C321E2C00F19404 /* ApiUrls.swift in Sources */,
 				292CD63B2C30AFB800F19404 /* ClipCardViewModel.swift in Sources */,
 				292CD6392C30AD0F00F19404 /* ClipUserViewModel.swift in Sources */,
 				292CD6402C30B50D00F19404 /* SafariView.swift in Sources */,
@@ -537,6 +545,7 @@
 				292CD6512C32136500F19404 /* MockNetworkMonitor.swift in Sources */,
 				292CD6882C324D4100F19404 /* CacheLatestClipsUseCase.swift in Sources */,
 				292CD6422C30B55F00F19404 /* ClipsFeedViewModel.swift in Sources */,
+				4630890B2C331FB6006F3B48 /* Translations.swift in Sources */,
 				29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */,
 				292CD63D2C30B11700F19404 /* ClipDetailViewModel.swift in Sources */,
 				292CD6682C3246C400F19404 /* CacheLatestClipsRepository.swift in Sources */,

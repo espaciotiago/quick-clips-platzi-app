@@ -20,7 +20,7 @@ struct CustomButtonView: View {
                 Text(self.label)
                     .font(.subheadline)
                     .fontWeight(.bold)
-                    .foregroundStyle(Color(.font))
+                    .foregroundStyle(Color(.white))
             }
             .padding(.vertical, 4)
             .padding(.horizontal)

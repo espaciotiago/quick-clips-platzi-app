@@ -24,7 +24,7 @@ struct ClipsFeedView: View {
                 FeedView
             }
         }
-        .navigationTitle("QuickClips")
+        .navigationTitle(Translations.mainNavigationTitle)
         .navigationDestination(item: self.$viewModel.selectedClip, destination: { clip in
             ClipDetailView(viewModel: ClipDetailViewModel(clip: clip))
         })
@@ -78,11 +78,11 @@ struct ClipsFeedView: View {
     private var EmptyView: some View {
         VStack(spacing: 16) {
             Spacer()
-            Text("No hay datos para mostrar")
+            Text(Translations.emptyViewText)
                 .font(.subheadline)
                 .foregroundStyle(Color(.font))
                 .multilineTextAlignment(.center)
-            CustomButtonView(label: "Reintentar") {
+            CustomButtonView(label: Translations.retryButton) {
                 Task {
                     self.viewModel.loading = true
                     await self.viewModel.getFeed()
@@ -99,7 +99,7 @@ struct ClipsFeedView: View {
                 .font(.subheadline)
                 .foregroundStyle(Color(.font))
                 .multilineTextAlignment(.center)
-            CustomButtonView(label: "Reintentar") {
+            CustomButtonView(label: Translations.retryButton) {
                 Task {
                     self.viewModel.loading = true
                     await self.viewModel.getFeed()

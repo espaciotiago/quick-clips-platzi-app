@@ -39,7 +39,7 @@ struct ClipDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Clip")
+        .navigationTitle(Translations.detailNavigationTitle)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: Button(action: {
             self.presentationMode.wrappedValue.dismiss()

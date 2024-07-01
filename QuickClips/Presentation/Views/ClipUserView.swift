@@ -21,7 +21,7 @@ struct ClipUserView: View {
                 .font(.subheadline)
                 .foregroundStyle(Color(.font))
             Spacer()
-            CustomButtonView(label: "Ver perfil") {
+            CustomButtonView(label: Translations.seeProfileButton) {
                 self.action(self.viewModel.profileUrl)
             }
         }.padding(.horizontal)
