@@ -31,8 +31,8 @@ struct GetClipsUseCase: GetClipsUseCaseProtocol {
             switch result {
             case .success(let result):
                 return .success(result)
-            case .failure(let remoteError):
-                return .failure(remoteError)
+            case .failure(let error):
+                return .failure(error)
             }
         } catch {
             return .failure(error)
