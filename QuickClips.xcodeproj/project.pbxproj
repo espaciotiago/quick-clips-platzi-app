@@ -55,6 +55,7 @@
 		4630890F2C332BF7006F3B48 /* UnitTestNetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630890E2C332BF7006F3B48 /* UnitTestNetworkMonitor.swift */; };
 		463089112C332E03006F3B48 /* GetClipsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463089102C332E03006F3B48 /* GetClipsUseCaseTest.swift */; };
 		463089142C33318D006F3B48 /* GetClipsUnitTestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463089132C33318D006F3B48 /* GetClipsUnitTestingDataSource.swift */; };
+		463089162C335BE3006F3B48 /* ClipCardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463089152C335BE3006F3B48 /* ClipCardViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		4630890E2C332BF7006F3B48 /* UnitTestNetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestNetworkMonitor.swift; sourceTree = "<group>"; };
 		463089102C332E03006F3B48 /* GetClipsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsUseCaseTest.swift; sourceTree = "<group>"; };
 		463089132C33318D006F3B48 /* GetClipsUnitTestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsUnitTestingDataSource.swift; sourceTree = "<group>"; };
+		463089152C335BE3006F3B48 /* ClipCardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipCardViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,6 +397,7 @@
 		4630890C2C332680006F3B48 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				463089152C335BE3006F3B48 /* ClipCardViewModelTest.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463089162C335BE3006F3B48 /* ClipCardViewModelTest.swift in Sources */,
 				463089112C332E03006F3B48 /* GetClipsUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
