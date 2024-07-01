@@ -24,7 +24,8 @@ struct GetClipsUseCase: GetClipsUseCaseProtocol {
             let hasConnection = await self.networkMonitor.checkConnection()
             var result: Result<[Clip], Error>
             if(hasConnection) {
-                result = try await self.remoteDataSource.getClips(page: page, limit: limit)
+                //result = try await self.remoteDataSource.getClips(page: page, limit: limit)
+                result = try await self.localDataSource.getClips(page: page, limit: limit)
             } else {
                 result = try await self.localDataSource.getClips(page: page, limit: limit)
             }

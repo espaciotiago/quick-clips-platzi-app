@@ -11,7 +11,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: AppCompositionRoot.shared.getClipsUseCase))
+            ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: AppCompositionRoot.shared.getClipsUseCase,
+                                                        cacheLatestClipsUseCase: AppCompositionRoot.shared.cacheLatestClipsUseCase))
         }
     }
 }

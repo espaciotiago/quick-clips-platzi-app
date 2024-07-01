@@ -32,6 +32,7 @@ struct ClipsFeedView: View {
             switch item {
             case .safariView(let url):
                 SafariView(url: url)
+                    .edgesIgnoringSafeArea(.all)
             }
         }
         .onAppear {
@@ -103,7 +104,8 @@ struct ClipsFeedView: View {
     NavigationStack {
         ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
-                                                                                     networkMonitor: MockNetworkMonitor())))
+                                                                                     networkMonitor: MockNetworkMonitor()),
+                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: MockCacheLatestClipsDataSource())))
     }
 }
 
@@ -111,7 +113,8 @@ struct ClipsFeedView: View {
     NavigationStack {
         ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
-                                                                                     networkMonitor: MockNetworkMonitor(hasConnection: false))))
+                                                                                     networkMonitor: MockNetworkMonitor(hasConnection: false)),
+                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: MockCacheLatestClipsDataSource())))
     }
 }
 
@@ -120,7 +123,8 @@ struct ClipsFeedView: View {
         ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(error: NSError(domain: "Something went wrong",
                                                                                                                                              code: 400)),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
-                                                                                     networkMonitor: MockNetworkMonitor())))
+                                                                                     networkMonitor: MockNetworkMonitor()),
+                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: MockCacheLatestClipsDataSource())))
     }
 }
 
@@ -128,6 +132,7 @@ struct ClipsFeedView: View {
     NavigationStack {
         ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(feed: []),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
-                                                                                     networkMonitor: MockNetworkMonitor())))
+                                                                                     networkMonitor: MockNetworkMonitor()),
+                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: MockCacheLatestClipsDataSource())))
     }
 }

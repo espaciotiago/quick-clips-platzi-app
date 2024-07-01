@@ -24,9 +24,12 @@ class ClipsFeedViewModel: ObservableObject {
     var error: Error?
     
     private let getClipsUseCase: GetClipsUseCaseProtocol
+    private let cacheLatestClipsUseCase: CacheLatestClipsProtocol
     
-    init(getClipsUseCase: GetClipsUseCaseProtocol) {
+    init(getClipsUseCase: GetClipsUseCaseProtocol,
+         cacheLatestClipsUseCase: CacheLatestClipsProtocol) {
         self.getClipsUseCase = getClipsUseCase
+        self.cacheLatestClipsUseCase = cacheLatestClipsUseCase
     }
     
     var shouldShowEmptyView: Bool {
@@ -39,6 +42,7 @@ class ClipsFeedViewModel: ObservableObject {
             switch result {
             case .success(let clips):
                 self.feed.append(contentsOf: clips.map {ClipCardViewModel(clip: $0)})
+                self.cacheLatestClipsUseCase.execute(clips)
                 self.page += 1
             case .failure(let error):
                 self.error = error

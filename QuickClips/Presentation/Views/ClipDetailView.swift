@@ -57,6 +57,7 @@ struct ClipDetailView: View {
             switch item {
             case .safariView(let url):
                 SafariView(url: url)
+                    .edgesIgnoringSafeArea(.all)
             }
         }
     }
