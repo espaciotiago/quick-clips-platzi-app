@@ -10,20 +10,90 @@ import XCTest
 
 final class GetClipsUseCaseTest: XCTestCase {
     
-    func testGetClips() {
-        
+    func testGetClips() async {
+        let sut = self.createUseCase()
+        let result = try! await sut.execute(page: 1, limit: 10)
+        var clips: [Clip]?
+        var shouldCacheClips = false
+        switch result {
+        case .success(let response):
+            clips = response.clips
+            shouldCacheClips = response.shouldCacheClips
+        default: ()
+        }
+        XCTAssertNotNil(clips)
+        XCTAssertEqual(clips?.count, 10)
+        XCTAssertTrue(shouldCacheClips)
     }
     
-    func testGetClipsNoConnection() {
-        
+    func testGetClipsNoConnection() async {
+        let sut = self.createUseCase(hasConnection: false)
+        let result = try! await sut.execute(page: 1, limit: 10)
+        var clips: [Clip]?
+        var shouldCacheClips = false
+        switch result {
+        case .success(let response):
+            clips = response.clips
+            shouldCacheClips = response.shouldCacheClips
+        default: ()
+        }
+        XCTAssertNotNil(clips)
+        XCTAssertEqual(clips?.count, 10)
+        XCTAssertFalse(shouldCacheClips)
     }
     
-    func testGetClipsWithError() {
+    func testGetClipsWithError() async {
+        let sut = self.createUseCase(remoteError: NSError(domain: "Test Error", code: 0))
+        let result = try! await sut.execute(page: 1, limit: 10)
+        var error: Error?
+        switch result {
+        case .failure(let resultError):
+            error = resultError
+        default: ()
+        }
+        XCTAssertNotNil(error)
         
+        let sutNoConnection = self.createUseCase(localError: NSError(domain: "Test Error", code: 0),
+                                                 hasConnection: false)
+        let resultNoConnection = try! await sutNoConnection.execute(page: 1, limit: 10)
+        var errorNoConnection: Error?
+        switch resultNoConnection {
+        case .failure(let resultError):
+            errorNoConnection = resultError
+        default: ()
+        }
+        XCTAssertNotNil(errorNoConnection)
     }
     
-    func testGetClipsEmpty() {
+    func testGetClipsEmpty() async {
+        let sut = self.createUseCase(remoteCustomFeed: [])
+        let result = try! await sut.execute(page: 1, limit: 10)
+        var clips: [Clip]?
+        var shouldCacheClips = false
+        switch result {
+        case .success(let response):
+            clips = response.clips
+            shouldCacheClips = response.shouldCacheClips
+        default: ()
+        }
+        XCTAssertNotNil(clips)
+        XCTAssertEqual(clips?.count, 0)
+        XCTAssertTrue(shouldCacheClips)
         
+        let sutNoConnection = self.createUseCase(localCustomFeed: [],
+                                                 hasConnection: false)
+        let resultNoConnection = try! await sutNoConnection.execute(page: 1, limit: 10)
+        var clipsNoConnection: [Clip]?
+        var shouldCacheClipsNoConnection = false
+        switch resultNoConnection {
+        case .success(let response):
+            clipsNoConnection = response.clips
+            shouldCacheClipsNoConnection = response.shouldCacheClips
+        default: ()
+        }
+        XCTAssertNotNil(clipsNoConnection)
+        XCTAssertEqual(clipsNoConnection?.count, 0)
+        XCTAssertTrue(shouldCacheClipsNoConnection)
     }
     
     // MARK: - Helpers

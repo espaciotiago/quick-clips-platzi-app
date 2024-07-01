@@ -39,7 +39,7 @@ struct GetClipsUnitTestingDataSource: GetClipsRepository {
                                                profileUrl: "https://www.pexels.com/@digitech"))
                 feedAux.append(clip)
             }
-            return .success((clips: feedAux, shouldCacheClips: true))
+            return .success((clips: feedAux, shouldCacheClips: self.isRemote))
         }
     }
 }
