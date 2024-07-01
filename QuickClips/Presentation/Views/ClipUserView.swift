@@ -24,7 +24,7 @@ struct ClipUserView: View {
             CustomButtonView(label: "Ver perfil") {
                 self.action(self.viewModel.profileUrl)
             }
-        }
+        }.padding(.horizontal)
     }
 }
 

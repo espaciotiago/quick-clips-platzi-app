@@ -33,7 +33,7 @@ struct ClipCardView: View {
             })
             ClipUserView(viewModel: ClipUserViewModel(userClip: self.viewModel.userClip)) { url in
                 self.profileSelected(url)
-            }.padding(.horizontal)
+            }
         }
     }
 }

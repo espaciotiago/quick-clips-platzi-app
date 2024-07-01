@@ -34,7 +34,7 @@ struct ClipDetailView: View {
                 Spacer()
                 ClipUserView(viewModel: ClipUserViewModel(userClip: self.viewModel.userClip)) { url in
                     self.viewModel.showProfileUrl(url)
-                }.padding(.horizontal)
+                }
                 Spacer().frame(height: 24)
             }
         }
