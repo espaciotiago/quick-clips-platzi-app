@@ -16,10 +16,12 @@ enum ClipsFeedSheet: Identifiable {
 class ClipsFeedViewModel: ObservableObject {
     
     @Published var loading = true
+    @Published var loadingPage = true
     @Published var sheet: ClipsFeedSheet?
     @Published var selectedClip: Clip?
     let limit = 10
     var page = 1
+    var showingFromCache = false
     var feed = [ClipCardViewModel]()
     var error: Error?
     
@@ -33,7 +35,7 @@ class ClipsFeedViewModel: ObservableObject {
     }
     
     var shouldShowEmptyView: Bool {
-        return feed.isEmpty
+        return self.feed.isEmpty
     }
     
     func getFeed() async {
@@ -43,7 +45,10 @@ class ClipsFeedViewModel: ObservableObject {
             case .success(let response):
                 self.feed.append(contentsOf: response.clips.map {ClipCardViewModel(clip: $0)})
                 if response.shouldCacheClips {
+                    self.showingFromCache = false
                     self.cacheLatestClipsUseCase.execute(response.clips)
+                } else {
+                    self.showingFromCache = true
                 }
                 self.page += 1
             case .failure(let error):
@@ -52,9 +57,11 @@ class ClipsFeedViewModel: ObservableObject {
         } catch {
             self.error = error
         }
-        DispatchQueue.main.async {
-            self.loading = false
-        }
+        self.hideLoading()
+    }
+    
+    func isLastLoadedClip(_ clip: Clip) -> Bool {
+        return clip == self.feed.last?.clip
     }
     
     func selectClip(_ clip: Clip) {
@@ -66,5 +73,15 @@ class ClipsFeedViewModel: ObservableObject {
             return
         }
         self.sheet = .safariView(url: url)
+    }
+    
+    private func hideLoading() {
+        DispatchQueue.main.async {
+            if self.loading {
+                self.loading = false
+            } else if self.loadingPage {
+                self.loadingPage = false
+            }
+        }
     }
 }

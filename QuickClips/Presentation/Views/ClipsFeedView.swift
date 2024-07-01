@@ -50,7 +50,18 @@ struct ClipsFeedView: View {
                         self.viewModel.selectClip(clip)
                     } profileSelected: { url in
                         self.viewModel.showProfileUrl(url)
+                    }.onAppear {
+                        if self.viewModel.isLastLoadedClip(clipCardVM.clip),
+                           !self.viewModel.showingFromCache {
+                            Task {
+                                self.viewModel.loadingPage = true
+                                await self.viewModel.getFeed()
+                            }
+                        }
                     }
+                }
+                if self.viewModel.loadingPage {
+                    ProgressView().tint(Color(.font))
                 }
             }
         }
@@ -59,8 +70,7 @@ struct ClipsFeedView: View {
     private var LoadingView: some View {
         VStack {
             Spacer()
-            ProgressView()
-                .tint(Color(.font))
+            ProgressView().tint(Color(.font))
             Spacer()
         }.padding()
     }
@@ -90,8 +100,8 @@ struct ClipsFeedView: View {
                 .foregroundStyle(Color(.font))
                 .multilineTextAlignment(.center)
             CustomButtonView(label: "Reintentar") {
-                self.viewModel.loading = true
                 Task {
+                    self.viewModel.loading = true
                     await self.viewModel.getFeed()
                 }
             }
