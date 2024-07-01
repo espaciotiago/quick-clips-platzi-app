@@ -20,8 +20,10 @@ struct ClipCardView: View {
             }, label: {
                 ZStack {
                     UrlImageView(urlString: self.viewModel.imageUrl)
+                        .scaledToFill()
                         .frame(maxWidth: .infinity)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .frame(height: 240)
+                        .clipped()
                     Image(.playButton)
                         .resizable()
                         .renderingMode(.template)
@@ -31,7 +33,7 @@ struct ClipCardView: View {
             })
             ClipUserView(viewModel: ClipUserViewModel(userClip: self.viewModel.userClip)) { url in
                 self.profileSelected(url)
-            }
+            }.padding(.horizontal)
         }
     }
 }

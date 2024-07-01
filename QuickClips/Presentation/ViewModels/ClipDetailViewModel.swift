@@ -25,6 +25,10 @@ class ClipDetailViewModel: ObservableObject {
         self.clip = clip
     }
     
+    var userClip: UserClip {
+        return self.clip.user
+    }
+    
     func loadVideo() {
         if let url = URL(string:self.clip.videoUrl) {
             DispatchQueue.main.async {

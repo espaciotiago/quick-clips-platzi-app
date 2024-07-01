@@ -51,7 +51,7 @@ struct ClipsFeedView: View {
                         self.viewModel.showProfileUrl(url)
                     }
                 }
-            }.padding()
+            }
         }
     }
     

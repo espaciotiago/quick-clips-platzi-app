@@ -17,7 +17,6 @@ struct UrlImageView: View {
             if let image = image {
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
             } else {
                 ProgressView()
                     .onAppear {

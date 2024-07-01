@@ -13,7 +13,7 @@ struct QuickClipsApp: App {
     init() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .clear
+        appearance.backgroundColor = UIColor(named: "primary")
         appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "font") ?? UIColor.white]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor(named: "font") ?? UIColor.white]
         

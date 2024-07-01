@@ -16,7 +16,7 @@ struct ClipDetailView: View {
     var body: some View {
         ZStack {
             Color(.primary).edgesIgnoringSafeArea(.all)
-            VStack(spacing: 16) {
+            VStack(spacing: 8) {
                 VStack {
                     if let player = self.viewModel.player {
                         VideoPlayer(player: player)
@@ -24,7 +24,6 @@ struct ClipDetailView: View {
                                 player.play()
                             }
                             .frame(maxWidth: .infinity)
-                            .edgesIgnoringSafeArea(.all)
                     } else {
                         Spacer()
                         ProgressView()
@@ -33,11 +32,10 @@ struct ClipDetailView: View {
                     }
                 }
                 Spacer()
-                ClipUserView(viewModel: ClipUserViewModel(userClip: UserClip(id: 1,
-                                                                             name: "Jhon Doe",
-                                                                             profileUrl: "https://www.pexels.com/@digitech"))) { url in
+                ClipUserView(viewModel: ClipUserViewModel(userClip: self.viewModel.userClip)) { url in
                     self.viewModel.showProfileUrl(url)
                 }.padding(.horizontal)
+                Spacer().frame(height: 24)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
