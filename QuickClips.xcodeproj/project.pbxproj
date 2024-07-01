@@ -327,8 +327,8 @@
 				29CEFF892C306271007A6051 /* QuickClips */,
 				29CEFF9B2C306272007A6051 /* QuickClipsTests */,
 				29CEFFA52C306272007A6051 /* QuickClipsUITests */,
-				29CEFF882C306271007A6051 /* Products */,
 				292CD66F2C3248B400F19404 /* Frameworks */,
+				29CEFF882C306271007A6051 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -345,17 +345,17 @@
 		29CEFF892C306271007A6051 /* QuickClips */ = {
 			isa = PBXGroup;
 			children = (
-				292CD6342C30ABBE00F19404 /* Data */,
-				292CD6142C3074A300F19404 /* Domain */,
-				292CD6182C3074D100F19404 /* Presentation */,
-				29CEFF912C306272007A6051 /* Preview Content */,
-				292CD6472C31C86600F19404 /* Utils */,
 				29CEFF902C306272007A6051 /* QuickClips.entitlements */,
 				292CD6542C32193D00F19404 /* AppCompositionRoot.swift */,
 				29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */,
 				29CEFF8E2C306272007A6051 /* Assets.xcassets */,
 				292CD6262C307D5300F19404 /* Colors.xcassets */,
 				463089082C331DDA006F3B48 /* Localizable.xcstrings */,
+				292CD6342C30ABBE00F19404 /* Data */,
+				292CD6142C3074A300F19404 /* Domain */,
+				292CD6182C3074D100F19404 /* Presentation */,
+				29CEFF912C306272007A6051 /* Preview Content */,
+				292CD6472C31C86600F19404 /* Utils */,
 			);
 			path = QuickClips;
 			sourceTree = "<group>";
