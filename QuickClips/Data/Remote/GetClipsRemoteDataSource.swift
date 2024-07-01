@@ -11,7 +11,7 @@ struct GetClipsRemoteDataSource: GetClipsRepository {
     
     let service: NetworkingRequestProtocol
     
-    func getClips(page: Int, limit: Int) async throws -> Result<[Clip], Error> {
+    func getClips(page: Int, limit: Int) async throws -> Result<GetClipsSuccessResult, Error> {
         guard let url = URL(string: ApiUrl.getPopularVideos) else {
             return .failure(NSError(domain: "Invalid url", code: 0, userInfo: nil))
         }
@@ -28,7 +28,7 @@ struct GetClipsRemoteDataSource: GetClipsRepository {
             let data = try await self.service.get(from: url, queryParams: queryParams, headers: headers)
             let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
             let feed = try GetClipsDTO(json).getFeed()
-            return .success(feed)
+            return .success((clips: feed, shouldCacheClips: true))
         } catch {
             return .failure(error)
         }

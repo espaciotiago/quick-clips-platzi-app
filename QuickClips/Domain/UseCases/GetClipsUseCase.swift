@@ -8,7 +8,7 @@
 import Foundation
 
 protocol GetClipsUseCaseProtocol {
-    func execute(page: Int, limit: Int) async throws -> Result<[Clip], Error>
+    func execute(page: Int, limit: Int) async throws -> Result<GetClipsSuccessResult, Error>
 }
 
 struct GetClipsUseCase: GetClipsUseCaseProtocol {
@@ -19,19 +19,18 @@ struct GetClipsUseCase: GetClipsUseCaseProtocol {
     
     let networkMonitor: CheckConnectionProtocol
     
-    func execute(page: Int, limit: Int) async throws -> Result<[Clip], Error> {
+    func execute(page: Int, limit: Int) async throws -> Result<GetClipsSuccessResult, Error> {
         do {
             let hasConnection = await self.networkMonitor.checkConnection()
-            var result: Result<[Clip], Error>
+            var result: Result<GetClipsSuccessResult, Error>
             if(hasConnection) {
-                //result = try await self.remoteDataSource.getClips(page: page, limit: limit)
-                result = try await self.localDataSource.getClips(page: page, limit: limit)
+                result = try await self.remoteDataSource.getClips(page: page, limit: limit)
             } else {
                 result = try await self.localDataSource.getClips(page: page, limit: limit)
             }
             switch result {
-            case .success(let clips):
-                return .success(clips)
+            case .success(let result):
+                return .success(result)
             case .failure(let remoteError):
                 return .failure(remoteError)
             }

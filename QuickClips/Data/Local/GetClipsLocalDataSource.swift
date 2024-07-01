@@ -10,11 +10,12 @@ import RealmSwift
 
 struct GetClipsLocalDataSource: GetClipsRepository {
     
-    func getClips(page: Int, limit: Int) async throws -> Result<[Clip], Error> {
+    func getClips(page: Int, limit: Int) async throws -> Result<GetClipsSuccessResult, Error> {
         let clips = try await self.getClipsAsync()
-        return .success(clips)
+        return .success((clips: clips, shouldCacheClips: false))
     }
-    func getClipsAsync() async throws -> [Clip] {
+    
+    private func getClipsAsync() async throws -> [Clip] {
         return try await withCheckedThrowingContinuation { continuation in
             DispatchQueue.global().async {
                 do {

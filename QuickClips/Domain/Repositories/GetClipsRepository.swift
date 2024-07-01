@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias GetClipsSuccessResult = (clips: [Clip], shouldCacheClips: Bool)
+
 protocol GetClipsRepository {
-    func getClips(page: Int, limit: Int) async throws -> Result<[Clip], Error>
+    func getClips(page: Int, limit: Int) async throws -> Result<GetClipsSuccessResult, Error>
 }

@@ -40,9 +40,11 @@ class ClipsFeedViewModel: ObservableObject {
         do {
             let result = try await self.getClipsUseCase.execute(page: self.page, limit: self.limit)
             switch result {
-            case .success(let clips):
-                self.feed.append(contentsOf: clips.map {ClipCardViewModel(clip: $0)})
-                self.cacheLatestClipsUseCase.execute(clips)
+            case .success(let response):
+                self.feed.append(contentsOf: response.clips.map {ClipCardViewModel(clip: $0)})
+                if response.shouldCacheClips {
+                    self.cacheLatestClipsUseCase.execute(response.clips)
+                }
                 self.page += 1
             case .failure(let error):
                 self.error = error

@@ -21,11 +21,11 @@ struct GetClipsMockDataSource: GetClipsRepository {
         self.feed = feed
     }
     
-    func getClips(page: Int, limit: Int) async throws -> Result<[Clip], Error> {
+    func getClips(page: Int, limit: Int) async throws -> Result<GetClipsSuccessResult, Error> {
         if let error = self.error {
             return .failure(error)
         } else if let feed = self.feed {
-            return .success(feed)
+            return .success((clips: feed, shouldCacheClips: true))
         } else {
             let imageUrl = isRemote ? "https://images.pexels.com/videos/1526909/free-video-1526909.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200" : "https://images.pexels.com/videos/2098989/free-video-2098989.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200"
             let userName = "\(isRemote ? "Remote" : "Local") Doe"
@@ -39,7 +39,7 @@ struct GetClipsMockDataSource: GetClipsRepository {
                                                profileUrl: "https://www.pexels.com/@digitech"))
                 feedAux.append(clip)
             }
-            return .success(feedAux)
+            return .success((clips: feedAux, shouldCacheClips: true))
         }
     }
 }
