@@ -43,7 +43,9 @@
 		292CD6862C324C3800F19404 /* RealmUserClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6852C324C3800F19404 /* RealmUserClip.swift */; };
 		292CD6882C324D4100F19404 /* CacheLatestClipsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6872C324D4100F19404 /* CacheLatestClipsUseCase.swift */; };
 		292CD68A2C324EB000F19404 /* LocalCacheLatestClipsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6892C324EB000F19404 /* LocalCacheLatestClipsDataSource.swift */; };
-		292CD68C2C324F1900F19404 /* MockCacheLatestClipsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD68B2C324F1900F19404 /* MockCacheLatestClipsDataSource.swift */; };
+		292CD68C2C324F1900F19404 /* CacheLatestClipsMockDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD68B2C324F1900F19404 /* CacheLatestClipsMockDataSource.swift */; };
+		296855842C336240007A5271 /* CacheLatestClipsUnitTestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296855832C336240007A5271 /* CacheLatestClipsUnitTestingDataSource.swift */; };
+		296855862C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296855852C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift */; };
 		29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */; };
 		29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8C2C306271007A6051 /* ContentView.swift */; };
 		29CEFF8F2C306272007A6051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CEFF8E2C306272007A6051 /* Assets.xcassets */; };
@@ -124,7 +126,9 @@
 		292CD6852C324C3800F19404 /* RealmUserClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUserClip.swift; sourceTree = "<group>"; };
 		292CD6872C324D4100F19404 /* CacheLatestClipsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLatestClipsUseCase.swift; sourceTree = "<group>"; };
 		292CD6892C324EB000F19404 /* LocalCacheLatestClipsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheLatestClipsDataSource.swift; sourceTree = "<group>"; };
-		292CD68B2C324F1900F19404 /* MockCacheLatestClipsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCacheLatestClipsDataSource.swift; sourceTree = "<group>"; };
+		292CD68B2C324F1900F19404 /* CacheLatestClipsMockDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLatestClipsMockDataSource.swift; sourceTree = "<group>"; };
+		296855832C336240007A5271 /* CacheLatestClipsUnitTestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLatestClipsUnitTestingDataSource.swift; sourceTree = "<group>"; };
+		296855852C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLatestClipsUseCaseTest.swift; sourceTree = "<group>"; };
 		29CEFF872C306271007A6051 /* QuickClips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickClips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsApp.swift; sourceTree = "<group>"; };
 		29CEFF8C2C306271007A6051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -233,10 +237,9 @@
 		292CD6342C30ABBE00F19404 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				463089122C333087006F3B48 /* UnitTesting */,
-				292CD6572C321B2900F19404 /* Local */,
 				292CD6582C321B2E00F19404 /* Mock */,
-				292CD6562C321B2500F19404 /* Remote */,
+				296855872C336316007A5271 /* Sources */,
+				463089122C333087006F3B48 /* UnitTesting */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -297,8 +300,8 @@
 		292CD6582C321B2E00F19404 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				292CD68B2C324F1900F19404 /* CacheLatestClipsMockDataSource.swift */,
 				292CD6522C32144E00F19404 /* GetClipsMockDataSource.swift */,
-				292CD68B2C324F1900F19404 /* MockCacheLatestClipsDataSource.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -328,6 +331,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		296855872C336316007A5271 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				292CD6572C321B2900F19404 /* Local */,
+				292CD6562C321B2500F19404 /* Remote */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		29CEFF7E2C306271007A6051 = {
@@ -405,6 +417,7 @@
 		4630890D2C332686006F3B48 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				296855852C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift */,
 				463089102C332E03006F3B48 /* GetClipsUseCaseTest.swift */,
 			);
 			path = UseCases;
@@ -413,6 +426,7 @@
 		463089122C333087006F3B48 /* UnitTesting */ = {
 			isa = PBXGroup;
 			children = (
+				296855832C336240007A5271 /* CacheLatestClipsUnitTestingDataSource.swift */,
 				463089132C33318D006F3B48 /* GetClipsUnitTestingDataSource.swift */,
 			);
 			path = UnitTesting;
@@ -563,7 +577,7 @@
 				292CD6642C32225200F19404 /* GetClipsDTO.swift in Sources */,
 				292CD6372C30AC6A00F19404 /* ClipUserView.swift in Sources */,
 				292CD66A2C32483F00F19404 /* RealmClip.swift in Sources */,
-				292CD68C2C324F1900F19404 /* MockCacheLatestClipsDataSource.swift in Sources */,
+				292CD68C2C324F1900F19404 /* CacheLatestClipsMockDataSource.swift in Sources */,
 				29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */,
 				292CD6532C32144E00F19404 /* GetClipsMockDataSource.swift in Sources */,
 				292CD64D2C31CD6800F19404 /* GetClipsRemoteDataSource.swift in Sources */,
@@ -578,6 +592,7 @@
 				292CD6492C31C87700F19404 /* NetworkMonitor.swift in Sources */,
 				292CD6252C307B5A00F19404 /* UrlImageView.swift in Sources */,
 				292CD6512C32136500F19404 /* MockNetworkMonitor.swift in Sources */,
+				296855842C336240007A5271 /* CacheLatestClipsUnitTestingDataSource.swift in Sources */,
 				292CD6882C324D4100F19404 /* CacheLatestClipsUseCase.swift in Sources */,
 				292CD6422C30B55F00F19404 /* ClipsFeedViewModel.swift in Sources */,
 				4630890B2C331FB6006F3B48 /* Translations.swift in Sources */,
@@ -607,6 +622,7 @@
 			files = (
 				463089162C335BE3006F3B48 /* ClipCardViewModelTest.swift in Sources */,
 				463089112C332E03006F3B48 /* GetClipsUseCaseTest.swift in Sources */,
+				296855862C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

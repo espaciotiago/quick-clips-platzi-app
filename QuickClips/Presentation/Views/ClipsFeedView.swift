@@ -115,7 +115,7 @@ struct ClipsFeedView: View {
         ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
                                                                                      networkMonitor: MockNetworkMonitor()),
-                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: MockCacheLatestClipsDataSource())))
+                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: CacheLatestClipsMockDataSource())))
     }
 }
 
@@ -124,7 +124,7 @@ struct ClipsFeedView: View {
         ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
                                                                                      networkMonitor: MockNetworkMonitor(hasConnection: false)),
-                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: MockCacheLatestClipsDataSource())))
+                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: CacheLatestClipsMockDataSource())))
     }
 }
 
@@ -134,7 +134,7 @@ struct ClipsFeedView: View {
                                                                                                                                              code: 400)),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
                                                                                      networkMonitor: MockNetworkMonitor()),
-                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: MockCacheLatestClipsDataSource())))
+                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: CacheLatestClipsMockDataSource())))
     }
 }
 
@@ -143,6 +143,6 @@ struct ClipsFeedView: View {
         ClipsFeedView(viewModel: ClipsFeedViewModel(getClipsUseCase: GetClipsUseCase(remoteDataSource: GetClipsMockDataSource(feed: []),
                                                                                      localDataSource: GetClipsMockDataSource(isRemote: false),
                                                                                      networkMonitor: MockNetworkMonitor()),
-                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: MockCacheLatestClipsDataSource())))
+                                                    cacheLatestClipsUseCase: CacheLatestClipsUseCase(localCacheLatestClipsDataSource: CacheLatestClipsMockDataSource())))
     }
 }

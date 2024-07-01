@@ -8,14 +8,14 @@
 import Foundation
 
 protocol CacheLatestClipsProtocol {
-    func execute(_ clips: [Clip])
+    func execute(_ clips: [Clip], completion: @escaping CacheLatestClipsCompletion)
 }
 
 struct CacheLatestClipsUseCase: CacheLatestClipsProtocol {
     
     let localCacheLatestClipsDataSource: CacheLatestClipsRepository
     
-    func execute(_ clips: [Clip]) {
-        self.localCacheLatestClipsDataSource.cacheLatestClips(clips)
+    func execute(_ clips: [Clip], completion: @escaping CacheLatestClipsCompletion) {
+        self.localCacheLatestClipsDataSource.cacheLatestClips(clips, completion: completion)
     }
 }

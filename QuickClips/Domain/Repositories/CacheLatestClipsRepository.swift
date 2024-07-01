@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias CacheLatestClipsCompletion = (_ completed: Bool) -> Void
+
 protocol CacheLatestClipsRepository {
-    func cacheLatestClips(_ clips: [Clip])
+    func cacheLatestClips(_ clips: [Clip], completion: @escaping CacheLatestClipsCompletion)
 }

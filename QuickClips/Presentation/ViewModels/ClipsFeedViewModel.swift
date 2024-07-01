@@ -46,7 +46,7 @@ class ClipsFeedViewModel: ObservableObject {
                 self.feed.append(contentsOf: response.clips.map {ClipCardViewModel(clip: $0)})
                 if response.shouldCacheClips {
                     self.showingFromCache = false
-                    self.cacheLatestClipsUseCase.execute(response.clips)
+                    self.cacheLatestClipsUseCase.execute(response.clips, completion: { _ in })
                 } else {
                     self.showingFromCache = true
                 }
