@@ -12,11 +12,12 @@ struct GetClipsRemoteDataSource: GetClipsRepository {
     let service: NetworkingRequestProtocol
     
     func getClips(page: Int, limit: Int) async throws -> Result<GetClipsSuccessResult, Error> {
-        guard let url = URL(string: ApiUrls.getPopularVideos) else {
-            return .failure(NSError(domain: "Invalid url", code: 0, userInfo: nil))
+        guard let url = URL(string: ApiUrls.getPopularVideos),
+              let apiKey = ProcessInfo.processInfo.environment[ConfigurationKeys.prexelsApiKey] else {
+            return .failure(NSError(domain: "Invalid url or api key", code: 0, userInfo: nil))
         }
         let headers = [
-            "Authorization": Configuration.prexelsApiKey,
+            "Authorization": apiKey,
             "Content-Type": "application/json"
         ]
         let queryParams = [

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Configuration {
-    static let prexelsApiKey = "QtgkfGn19FLuDVptXJP4ZoYUcQpzNFDK5a3aniPscJSGolGd3Ln5F7ui"
+struct ConfigurationKeys {
+    static let prexelsApiKey = "PREXELS_API_KEY"
 }

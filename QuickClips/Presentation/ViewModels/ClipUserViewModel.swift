@@ -25,6 +25,6 @@ struct ClipUserViewModel {
     
     var profileImageUrl: String {
         let replacedName = self.name.replacingOccurrences(of: " ", with: "+")
-        return "https://ui-avatars.com/api/?name= \(replacedName)"
+        return AuxUrls.getProfilePicture.replacingOccurrences(of: "%s", with: replacedName)
     }
 }

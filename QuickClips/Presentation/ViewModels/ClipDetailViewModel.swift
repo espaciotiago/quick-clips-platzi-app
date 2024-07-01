@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import AVKit
 
-enum ClipDetailSheet: Identifiable {
+enum ClipDetailSheet: Identifiable, Equatable {
     var id: UUID { UUID() }
     case safariView(url: URL)
 }
@@ -18,7 +18,7 @@ class ClipDetailViewModel: ObservableObject {
     
     @Published var player: AVPlayer?
     @Published var sheet: ClipDetailSheet?
-    
+         
     private let clip: Clip
     
     init(clip: Clip) {
@@ -31,9 +31,7 @@ class ClipDetailViewModel: ObservableObject {
     
     func loadVideo() {
         if let url = URL(string:self.clip.videoUrl) {
-            DispatchQueue.main.async {
-                self.player = AVPlayer(url: url)
-            }
+            self.player = AVPlayer(url: url)
         }
     }
     

@@ -50,7 +50,9 @@ struct ClipDetailView: View {
             }
         })
         .onAppear {
-            self.viewModel.loadVideo()
+            DispatchQueue.main.async {
+                self.viewModel.loadVideo()
+            }
             
         }
         .sheet(item: self.$viewModel.sheet) { item in

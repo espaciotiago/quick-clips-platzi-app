@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-enum ClipsFeedSheet: Identifiable {
+enum ClipsFeedSheet: Identifiable, Equatable {
     var id: UUID { UUID() }
     case safariView(url: URL)
 }
