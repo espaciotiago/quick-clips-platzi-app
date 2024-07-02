@@ -48,6 +48,7 @@
 		296855862C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296855852C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift */; };
 		296855892C33718D007A5271 /* ClipUserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296855882C33718D007A5271 /* ClipUserViewModelTest.swift */; };
 		2968558B2C33734C007A5271 /* ClipDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968558A2C33734C007A5271 /* ClipDetailViewModelTest.swift */; };
+		2968558D2C33751C007A5271 /* ClipsFeedViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968558C2C33751C007A5271 /* ClipsFeedViewModelTest.swift */; };
 		29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */; };
 		29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8C2C306271007A6051 /* ContentView.swift */; };
 		29CEFF8F2C306272007A6051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CEFF8E2C306272007A6051 /* Assets.xcassets */; };
@@ -133,6 +134,7 @@
 		296855852C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLatestClipsUseCaseTest.swift; sourceTree = "<group>"; };
 		296855882C33718D007A5271 /* ClipUserViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipUserViewModelTest.swift; sourceTree = "<group>"; };
 		2968558A2C33734C007A5271 /* ClipDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipDetailViewModelTest.swift; sourceTree = "<group>"; };
+		2968558C2C33751C007A5271 /* ClipsFeedViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsFeedViewModelTest.swift; sourceTree = "<group>"; };
 		29CEFF872C306271007A6051 /* QuickClips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickClips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsApp.swift; sourceTree = "<group>"; };
 		29CEFF8C2C306271007A6051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 			children = (
 				463089152C335BE3006F3B48 /* ClipCardViewModelTest.swift */,
 				2968558A2C33734C007A5271 /* ClipDetailViewModelTest.swift */,
+				2968558C2C33751C007A5271 /* ClipsFeedViewModelTest.swift */,
 				296855882C33718D007A5271 /* ClipUserViewModelTest.swift */,
 			);
 			path = ViewModels;
@@ -628,6 +631,7 @@
 			files = (
 				463089162C335BE3006F3B48 /* ClipCardViewModelTest.swift in Sources */,
 				296855892C33718D007A5271 /* ClipUserViewModelTest.swift in Sources */,
+				2968558D2C33751C007A5271 /* ClipsFeedViewModelTest.swift in Sources */,
 				2968558B2C33734C007A5271 /* ClipDetailViewModelTest.swift in Sources */,
 				463089112C332E03006F3B48 /* GetClipsUseCaseTest.swift in Sources */,
 				296855862C3362D9007A5271 /* CacheLatestClipsUseCaseTest.swift in Sources */,

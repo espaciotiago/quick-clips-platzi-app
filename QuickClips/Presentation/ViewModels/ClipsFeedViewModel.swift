@@ -47,10 +47,10 @@ class ClipsFeedViewModel: ObservableObject {
                 if response.shouldCacheClips {
                     self.showingFromCache = false
                     self.cacheLatestClipsUseCase.execute(response.clips, completion: { _ in })
+                    self.page += 1
                 } else {
                     self.showingFromCache = true
                 }
-                self.page += 1
             case .failure(let error):
                 self.error = error
             }
