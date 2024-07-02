@@ -38,6 +38,7 @@ struct ClipDetailView: View {
                 Spacer().frame(height: 24)
             }
         }
+        .accessibilityIdentifier("ClipDetailView")
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Translations.detailNavigationTitle)
         .navigationBarBackButtonHidden(true)

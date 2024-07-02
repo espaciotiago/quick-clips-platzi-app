@@ -30,7 +30,7 @@ struct ClipCardView: View {
                         .foregroundStyle(Color(.placeholder))
                         .frame(width: 40, height: 40)
                 }
-            })
+            }).accessibilityIdentifier("ClipCardViewButton\(self.viewModel.clip.id)")
             ClipUserView(viewModel: ClipUserViewModel(userClip: self.viewModel.userClip)) { url in
                 self.profileSelected(url)
             }

@@ -49,11 +49,15 @@
 		296855892C33718D007A5271 /* ClipUserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296855882C33718D007A5271 /* ClipUserViewModelTest.swift */; };
 		2968558B2C33734C007A5271 /* ClipDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968558A2C33734C007A5271 /* ClipDetailViewModelTest.swift */; };
 		2968558D2C33751C007A5271 /* ClipsFeedViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968558C2C33751C007A5271 /* ClipsFeedViewModelTest.swift */; };
+		296855902C33A5E1007A5271 /* GetClipsUITestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968558F2C33A5E1007A5271 /* GetClipsUITestingDataSource.swift */; };
+		296855922C33A88D007A5271 /* CacheLatestClipsUITestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296855912C33A88D007A5271 /* CacheLatestClipsUITestingDataSource.swift */; };
+		296855982C33AFE7007A5271 /* UseCasesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296855972C33AFE7007A5271 /* UseCasesFactory.swift */; };
+		2968559A2C33B172007A5271 /* UITestNetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296855992C33B172007A5271 /* UITestNetworkMonitor.swift */; };
 		29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */; };
 		29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFF8C2C306271007A6051 /* ContentView.swift */; };
 		29CEFF8F2C306272007A6051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CEFF8E2C306272007A6051 /* Assets.xcassets */; };
 		29CEFF932C306272007A6051 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CEFF922C306272007A6051 /* Preview Assets.xcassets */; };
-		29CEFFA72C306272007A6051 /* QuickClipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFFA62C306272007A6051 /* QuickClipsUITests.swift */; };
+		29CEFFA72C306272007A6051 /* ClipsFeedViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFFA62C306272007A6051 /* ClipsFeedViewUITests.swift */; };
 		29CEFFA92C306272007A6051 /* QuickClipsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEFFA82C306272007A6051 /* QuickClipsUITestsLaunchTests.swift */; };
 		463089092C331DDB006F3B48 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 463089082C331DDA006F3B48 /* Localizable.xcstrings */; };
 		4630890B2C331FB6006F3B48 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630890A2C331FB6006F3B48 /* Translations.swift */; };
@@ -88,6 +92,16 @@
 			dstSubfolderSpec = 10;
 			files = (
 				292CD6832C324A9800F19404 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296855962C33AB1F007A5271 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +149,10 @@
 		296855882C33718D007A5271 /* ClipUserViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipUserViewModelTest.swift; sourceTree = "<group>"; };
 		2968558A2C33734C007A5271 /* ClipDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipDetailViewModelTest.swift; sourceTree = "<group>"; };
 		2968558C2C33751C007A5271 /* ClipsFeedViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsFeedViewModelTest.swift; sourceTree = "<group>"; };
+		2968558F2C33A5E1007A5271 /* GetClipsUITestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsUITestingDataSource.swift; sourceTree = "<group>"; };
+		296855912C33A88D007A5271 /* CacheLatestClipsUITestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLatestClipsUITestingDataSource.swift; sourceTree = "<group>"; };
+		296855972C33AFE7007A5271 /* UseCasesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesFactory.swift; sourceTree = "<group>"; };
+		296855992C33B172007A5271 /* UITestNetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestNetworkMonitor.swift; sourceTree = "<group>"; };
 		29CEFF872C306271007A6051 /* QuickClips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickClips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CEFF8A2C306271007A6051 /* QuickClipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsApp.swift; sourceTree = "<group>"; };
 		29CEFF8C2C306271007A6051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,7 +161,7 @@
 		29CEFF922C306272007A6051 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		29CEFF982C306272007A6051 /* QuickClipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickClipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CEFFA22C306272007A6051 /* QuickClipsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickClipsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29CEFFA62C306272007A6051 /* QuickClipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsUITests.swift; sourceTree = "<group>"; };
+		29CEFFA62C306272007A6051 /* ClipsFeedViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsFeedViewUITests.swift; sourceTree = "<group>"; };
 		29CEFFA82C306272007A6051 /* QuickClipsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickClipsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		463089082C331DDA006F3B48 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		4630890A2C331FB6006F3B48 /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
@@ -245,6 +263,7 @@
 			children = (
 				292CD6582C321B2E00F19404 /* Mock */,
 				296855872C336316007A5271 /* Sources */,
+				2968558E2C33A5BE007A5271 /* UITesting */,
 				463089122C333087006F3B48 /* UnitTesting */,
 			);
 			path = Data;
@@ -278,6 +297,7 @@
 				292CD6542C32193D00F19404 /* AppCompositionRoot.swift */,
 				292CD65F2C321CFF00F19404 /* ConfigurationKeys.swift */,
 				4630890A2C331FB6006F3B48 /* Translations.swift */,
+				296855972C33AFE7007A5271 /* UseCasesFactory.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -327,6 +347,7 @@
 				292CD64A2C31CC4300F19404 /* CheckConnectionProtocol.swift */,
 				292CD6502C32136500F19404 /* MockNetworkMonitor.swift */,
 				292CD6482C31C87700F19404 /* NetworkMonitor.swift */,
+				296855992C33B172007A5271 /* UITestNetworkMonitor.swift */,
 				4630890E2C332BF7006F3B48 /* UnitTestNetworkMonitor.swift */,
 			);
 			path = NetworkMonitor;
@@ -346,6 +367,15 @@
 				292CD6562C321B2500F19404 /* Remote */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		2968558E2C33A5BE007A5271 /* UITesting */ = {
+			isa = PBXGroup;
+			children = (
+				2968558F2C33A5E1007A5271 /* GetClipsUITestingDataSource.swift */,
+				296855912C33A88D007A5271 /* CacheLatestClipsUITestingDataSource.swift */,
+			);
+			path = UITesting;
 			sourceTree = "<group>";
 		};
 		29CEFF7E2C306271007A6051 = {
@@ -406,7 +436,7 @@
 		29CEFFA52C306272007A6051 /* QuickClipsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				29CEFFA62C306272007A6051 /* QuickClipsUITests.swift */,
+				29CEFFA62C306272007A6051 /* ClipsFeedViewUITests.swift */,
 				29CEFFA82C306272007A6051 /* QuickClipsUITestsLaunchTests.swift */,
 			);
 			path = QuickClipsUITests;
@@ -490,6 +520,7 @@
 				29CEFF9E2C306272007A6051 /* Sources */,
 				29CEFF9F2C306272007A6051 /* Frameworks */,
 				29CEFFA02C306272007A6051 /* Resources */,
+				296855962C33AB1F007A5271 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -497,6 +528,8 @@
 				29CEFFA42C306272007A6051 /* PBXTargetDependency */,
 			);
 			name = QuickClipsUITests;
+			packageProductDependencies = (
+			);
 			productName = QuickClipsUITests;
 			productReference = 29CEFFA22C306272007A6051 /* QuickClipsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -588,6 +621,7 @@
 				292CD66A2C32483F00F19404 /* RealmClip.swift in Sources */,
 				292CD68C2C324F1900F19404 /* CacheLatestClipsMockDataSource.swift in Sources */,
 				29CEFF8D2C306271007A6051 /* ContentView.swift in Sources */,
+				296855982C33AFE7007A5271 /* UseCasesFactory.swift in Sources */,
 				292CD6532C32144E00F19404 /* GetClipsMockDataSource.swift in Sources */,
 				292CD64D2C31CD6800F19404 /* GetClipsRemoteDataSource.swift in Sources */,
 				292CD65A2C321C1700F19404 /* NetworkingRequestProtocol.swift in Sources */,
@@ -598,6 +632,7 @@
 				292CD63B2C30AFB800F19404 /* ClipCardViewModel.swift in Sources */,
 				292CD6392C30AD0F00F19404 /* ClipUserViewModel.swift in Sources */,
 				292CD6402C30B50D00F19404 /* SafariView.swift in Sources */,
+				2968559A2C33B172007A5271 /* UITestNetworkMonitor.swift in Sources */,
 				292CD6492C31C87700F19404 /* NetworkMonitor.swift in Sources */,
 				292CD6252C307B5A00F19404 /* UrlImageView.swift in Sources */,
 				292CD6512C32136500F19404 /* MockNetworkMonitor.swift in Sources */,
@@ -605,6 +640,7 @@
 				292CD6882C324D4100F19404 /* CacheLatestClipsUseCase.swift in Sources */,
 				292CD6422C30B55F00F19404 /* ClipsFeedViewModel.swift in Sources */,
 				4630890B2C331FB6006F3B48 /* Translations.swift in Sources */,
+				296855902C33A5E1007A5271 /* GetClipsUITestingDataSource.swift in Sources */,
 				29CEFF8B2C306271007A6051 /* QuickClipsApp.swift in Sources */,
 				292CD63D2C30B11700F19404 /* ClipDetailViewModel.swift in Sources */,
 				292CD6682C3246C400F19404 /* CacheLatestClipsRepository.swift in Sources */,
@@ -618,6 +654,7 @@
 				292CD6662C323B3B00F19404 /* JsonParserProtocol.swift in Sources */,
 				292CD65E2C321CAC00F19404 /* NetworkingRequestService.swift in Sources */,
 				292CD6552C32193D00F19404 /* AppCompositionRoot.swift in Sources */,
+				296855922C33A88D007A5271 /* CacheLatestClipsUITestingDataSource.swift in Sources */,
 				292CD6442C31C55200F19404 /* GetClipsRepository.swift in Sources */,
 				292CD6462C31C71000F19404 /* GetClipsUseCase.swift in Sources */,
 				292CD61D2C307A9C00F19404 /* ClipsFeedView.swift in Sources */,
@@ -643,7 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29CEFFA92C306272007A6051 /* QuickClipsUITestsLaunchTests.swift in Sources */,
-				29CEFFA72C306272007A6051 /* QuickClipsUITests.swift in Sources */,
+				29CEFFA72C306272007A6051 /* ClipsFeedViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

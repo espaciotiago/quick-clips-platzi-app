@@ -63,7 +63,7 @@ struct ClipsFeedView: View {
                 if self.viewModel.loadingPage {
                     ProgressView().tint(Color(.font))
                 }
-            }
+            }.accessibilityIdentifier("FeedView")
         }
     }
     
