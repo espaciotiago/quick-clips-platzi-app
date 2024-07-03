@@ -9,10 +9,8 @@ import Foundation
 
 struct UseCasesFactory {
     
-    private let runningUITests = ProcessInfo.processInfo.arguments.contains("UITesting")
-    
     var getClipsUseCase: GetClipsUseCaseProtocol {
-        if self.runningUITests {
+        if Configuration.enviroment == .uiTest {
             let uiRemoteDataSource = GetClipsUITestingDataSource()
             let uiLocalDataSource = GetClipsLocalDataSource()
             let uiNetworkMonitor = UITestNetworkMonitor()
@@ -31,7 +29,7 @@ struct UseCasesFactory {
     }
     
     var cacheLatestClipsUseCase: CacheLatestClipsUseCase {
-        if self.runningUITests {
+        if Configuration.enviroment == .uiTest {
             let uiCacheLatestClipsDataSource = CacheLatestClipsUITestingDataSource()
             return CacheLatestClipsUseCase(localCacheLatestClipsDataSource: uiCacheLatestClipsDataSource)
         } else {

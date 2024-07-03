@@ -32,7 +32,7 @@
 		292CD6552C32193D00F19404 /* AppCompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6542C32193D00F19404 /* AppCompositionRoot.swift */; };
 		292CD65A2C321C1700F19404 /* NetworkingRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6592C321C1700F19404 /* NetworkingRequestProtocol.swift */; };
 		292CD65E2C321CAC00F19404 /* NetworkingRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD65D2C321CAC00F19404 /* NetworkingRequestService.swift */; };
-		292CD6602C321CFF00F19404 /* ConfigurationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD65F2C321CFF00F19404 /* ConfigurationKeys.swift */; };
+		292CD6602C321CFF00F19404 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD65F2C321CFF00F19404 /* Configuration.swift */; };
 		292CD6622C321E2C00F19404 /* ApiUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6612C321E2C00F19404 /* ApiUrls.swift */; };
 		292CD6642C32225200F19404 /* GetClipsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6632C32225200F19404 /* GetClipsDTO.swift */; };
 		292CD6662C323B3B00F19404 /* JsonParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292CD6652C323B3B00F19404 /* JsonParserProtocol.swift */; };
@@ -134,7 +134,7 @@
 		292CD6542C32193D00F19404 /* AppCompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompositionRoot.swift; sourceTree = "<group>"; };
 		292CD6592C321C1700F19404 /* NetworkingRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequestProtocol.swift; sourceTree = "<group>"; };
 		292CD65D2C321CAC00F19404 /* NetworkingRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequestService.swift; sourceTree = "<group>"; };
-		292CD65F2C321CFF00F19404 /* ConfigurationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationKeys.swift; sourceTree = "<group>"; };
+		292CD65F2C321CFF00F19404 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		292CD6612C321E2C00F19404 /* ApiUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrls.swift; sourceTree = "<group>"; };
 		292CD6632C32225200F19404 /* GetClipsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClipsDTO.swift; sourceTree = "<group>"; };
 		292CD6652C323B3B00F19404 /* JsonParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParserProtocol.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 				292CD65C2C321C8400F19404 /* NetworkMonitor */,
 				292CD6612C321E2C00F19404 /* ApiUrls.swift */,
 				292CD6542C32193D00F19404 /* AppCompositionRoot.swift */,
-				292CD65F2C321CFF00F19404 /* ConfigurationKeys.swift */,
+				292CD65F2C321CFF00F19404 /* Configuration.swift */,
 				4630890A2C331FB6006F3B48 /* Translations.swift */,
 				296855972C33AFE7007A5271 /* UseCasesFactory.swift */,
 			);
@@ -649,7 +649,7 @@
 				292CD64B2C31CC4300F19404 /* CheckConnectionProtocol.swift in Sources */,
 				292CD6212C307ABB00F19404 /* ClipCardView.swift in Sources */,
 				292CD6302C30A69B00F19404 /* UserClip.swift in Sources */,
-				292CD6602C321CFF00F19404 /* ConfigurationKeys.swift in Sources */,
+				292CD6602C321CFF00F19404 /* Configuration.swift in Sources */,
 				292CD68A2C324EB000F19404 /* LocalCacheLatestClipsDataSource.swift in Sources */,
 				292CD6662C323B3B00F19404 /* JsonParserProtocol.swift in Sources */,
 				292CD65E2C321CAC00F19404 /* NetworkingRequestService.swift in Sources */,
